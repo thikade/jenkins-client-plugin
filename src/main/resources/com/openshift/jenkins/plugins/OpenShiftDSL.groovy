@@ -145,7 +145,7 @@ class OpenShiftDSL implements Serializable {
 
         public String getToken() {
             if (this.@credentialsId != null) {
-                script.printf("DEBUG: OpenShiftDSL.getToken(): credentialsId = %s", credentialsId);
+                script.printf("DEBUG: OpenShiftDSL.getToken(): credentialsId = %s, trying to find of type: %s: ", credentialsId, OpenShiftTokenCredentials.class);
                 OpenShiftTokenCredentials tokenSecret = CredentialsProvider.findCredentialById(credentialsId, OpenShiftTokenCredentials.class, script.$build(), Collections.emptyList());
                 if (tokenSecret != null) {
                     return tokenSecret.getToken();
