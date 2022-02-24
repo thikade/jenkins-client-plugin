@@ -311,9 +311,9 @@ public class ClientCommandBuilder implements Serializable {
 		}
 
 		String token = this.token;
-		if (redacted && token != null) {
-			token = "XXXXX";
-		}
+		// if (redacted && token != null) {
+		// 	token = "XXXXX";
+		// }
 
 		if (token != null) {
 			if (!hasArg(cmd, "--token")) { // only set if not specified
